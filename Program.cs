@@ -1,47 +1,41 @@
-
-using System;
-using System.Drawing;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace TelCo.ColorCoder
 {
-  partial class Program
-  {
-    /// <summary>
-    /// Test code for the class
-    /// </summary>
-    /// <param name="args"></param>
-    private static void Main(string[] args)
+
+    class TestCode : PairColor
     {
-        int pairNumber = 4;
-        ColorPair testPair1 = Program.GetColorFromPairNumber(pairNumber);
-        Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
-        Debug.Assert(testPair1.majorColor == Color.White);
-        Debug.Assert(testPair1.minorColor == Color.Brown);
+        static void Main(string[] args)
+        {
+            var ColorCode = new ColorCode();
+            int PairNumber = 4;
+            PairColor TestPair1 = ColorCode.GetColorFromPairNumber(PairNumber);
+            Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", PairNumber, TestPair1);
+            Debug.Assert(TestPair1.MajorColor == Color.White);
+            Debug.Assert(TestPair1.MinorColor == Color.Brown);
 
-        pairNumber = 5;
-        testPair1 = Program.GetColorFromPairNumber(pairNumber);
-        Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
-        Debug.Assert(testPair1.majorColor == Color.White);
-        Debug.Assert(testPair1.minorColor == Color.SlateGray);
+            PairNumber = 5;
+            TestPair1 = ColorCode.GetColorFromPairNumber(PairNumber);
+            Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", PairNumber, TestPair1);
+            Debug.Assert(TestPair1.MajorColor == Color.White);
+            Debug.Assert(TestPair1.MinorColor == Color.SlateGray );
 
-        pairNumber = 23;
-        testPair1 = Program.GetColorFromPairNumber(pairNumber);
-        Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
-        Debug.Assert(testPair1.majorColor == Color.Violet);
-        Debug.Assert(testPair1.minorColor == Color.Green);
+            PairNumber = 23;
+            TestPair1 = ColorCode.GetColorFromPairNumber(PairNumber);
+            Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", PairNumber, TestPair1);
+            Debug.Assert(TestPair1.MajorColor == Color.Violet);
+            Debug.Assert(TestPair1.MinorColor == Color.Green);
 
-        ColorPair testPair2 = new ColorPair() { majorColor = Color.Yellow, minorColor = Color.Green };
-        pairNumber = Program.GetPairNumberFromColor(testPair2);
-        Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}\n", testPair2, pairNumber);
-        Debug.Assert(pairNumber == 18);
+            PairColor TestPair2 = new PairColor() { MajorColor = Color.Yellow, MinorColor = Color.Green };
+            PairNumber = ColorCode.GetPairNumberFromColor(TestPair2);
+            Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}\n", TestPair2, PairNumber);
+            Debug.Assert(PairNumber == 18);
 
-        testPair2 = new ColorPair() { majorColor = Color.Red, minorColor = Color.Blue };
-        pairNumber = Program.GetPairNumberFromColor(testPair2);
-        Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}", testPair2, pairNumber);
-        Debug.Assert(pairNumber == 6);
-
-         ReferenceManualGenerator();
+            TestPair2 = new PairColor() { MajorColor = Color.Red, MinorColor = Color.Blue };
+            PairNumber = ColorCode.GetPairNumberFromColor(TestPair2);
+            Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}", TestPair2, PairNumber);
+            Debug.Assert(PairNumber == 6);
+        }
     }
-  }
 }
