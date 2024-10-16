@@ -10,7 +10,7 @@ namespace TelCo.ColorCoder
     /// This class provides the color coding and 
     /// mapping of pair number to color and color to pair number.
     /// </summary>
-    partial class Program
+    partial class PairColorCodeData
     {
         private static Color[] colorMapMajor;
         private static Color[] colorMapMinor;
@@ -23,7 +23,7 @@ namespace TelCo.ColorCoder
                 return string.Format("MajorColor:{0}, MinorColor:{1}", majorColor.Name, minorColor.Name);
             }
         }
-        static Program()
+        static ColorMapping()
         {
             colorMapMajor = new Color[] { Color.White, Color.Red, Color.Black, Color.Yellow, Color.Violet };
             colorMapMinor = new Color[] { Color.Blue, Color.Orange, Color.Green, Color.Brown, Color.SlateGray };
