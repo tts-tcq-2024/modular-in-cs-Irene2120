@@ -24,9 +24,9 @@ namespace TelCo.ColorCoder
       string manual = "_________________________________________\n";
       manual += String.Format("|{0}\t|{1}\t|{2}|\n", "Major Color", "Minor Color", "Pair No");
 
-      foreach(var majorColor in MajorColor)
+      foreach(var majorcolor in MajorColor)
       {
-        foreach(var minorColor in MinorColor)
+        foreach(var minorcolor in MinorColor)
         {
           manual += String.Format("|{0}\t\t|{1}\t\t|{2}|\n", majorcolor.Name, minorcolor.Name, colorCode);
           colorCode++;
