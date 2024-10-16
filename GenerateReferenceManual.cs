@@ -7,16 +7,19 @@ namespace TelCo.ColorCoder
 {
   partial class GenerateRefrenceManual
   {
-    public Color[] MajorColor;
-    public Color[] MinorColor;
+   private static Color[] MajorColor{get;set;}
+    private static Color[] MinorColor{get;set;}
     
     /// <summary>
     /// Print the mapping between color-names to the corresponding numbers.
     /// </summary>
-    private static string ReferenceManualGenerator()
+    private static string GenerateReferenceManual()
     {
-      GenerateRefrenceManual.MinorColor;
-      GenerateRefrenceManual.MajorColor;
+      if(MajorColor == null || MinorColor == null)
+      {
+        throw new InvalidOperationException("MajorColor and MinorColor arrays must be initialized.");
+      }
+      
       int colorCode = 1;
       string manual = "_________________________________________\n";
       manual += String.Format("|{0}\t|{1}\t|{2}|\n", "Major Color", "Minor Color", "Pair No");
@@ -25,10 +28,11 @@ namespace TelCo.ColorCoder
       {
         foreach(var minorColor in MinorColor)
         {
-          manual += String.Format("|{0}\t\t|{1}\t\t|{2}|\n", MajorColor.Name, MinorColor.Name, colorCode);
+          manual += String.Format("|{0}\t\t|{1}\t\t|{2}|\n", majorcolor.Name, minorcolor.Name, colorCode);
           colorCode++;
         }
       }
+      manual +="___________________________________________________";
      return manual; 
     }
   }
