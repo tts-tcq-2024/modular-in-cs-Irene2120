@@ -7,6 +7,7 @@ namespace TelCo.ColorCoder
 {
   partial class GenerateRefrenceManual
   {
+    public Color MajorColor , MinorColor;
     /// <summary>
     /// Print the mapping between color-names to the corresponding numbers.
     /// </summary>
@@ -20,7 +21,7 @@ namespace TelCo.ColorCoder
       {
         foreach(var minorColor in colorMapMinor)
         {
-          manual += String.Format("|{0}\t\t|{1}\t\t|{2}|\n", majorColor.Name, minorColor.Name, colorCode);
+          manual += String.Format("|{0}\t\t|{1}\t\t|{2}|\n", MajorColor.Name, MinorColor.Name, colorCode);
           colorCode++;
         }
       }
