@@ -1,6 +1,6 @@
 namespace TelCo.ColorCoder
 {
-  partial class Program
+  partial class ColorPairConverter
   {
     /// <summary>
     /// Given a pair number function returns the major and minor colors in that order
