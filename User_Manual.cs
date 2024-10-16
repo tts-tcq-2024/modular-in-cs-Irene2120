@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace TelCo.ColorCoder
 {
-  partial class Program
+  partial class ReferenceManualGenerator
   {
     /// <summary>
     /// Print the mapping between color-names to the corresponding numbers.
@@ -15,7 +15,7 @@ namespace TelCo.ColorCoder
       int colorCode = 1;
       string manual = "_________________________________________\n";
       manual += String.Format("|{0}\t|{1}\t|{2}|\n", "Major Color", "Minor Color", "Pair No");
-      Console.WriteLine();
+
       foreach(var majorColor in colorMapMajor)
       {
         foreach(var minorColor in colorMapMinor)
