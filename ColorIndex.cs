@@ -9,14 +9,14 @@ namespace ColorCoding
 {
     internal class GetColorIndex : ColorMapping
     {
-        public int GetMajorColorIndex(PairColor pair)
+        public int GetMajorColorIndex(PairColor Pair)
         {
-        return Array.IndexOf(MajorColorMapping, pair.MajorColor);
+        return Array.IndexOf(MajorColorMapping, Pair.MajorColor);
         }
 
-        public int GetMinorColorIndexOf(PairColor pair)
+        public int GetMinorColorIndexOf(PairColor Pair)
         {
-        return Array.IndexOf(MinorColorMapping, pair.MinorColor);
+        return Array.IndexOf(MinorColorMapping, Pair.MinorColor);
         }            
     }
 }
