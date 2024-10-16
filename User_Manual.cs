@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace TelCo.ColorCoder
 {
-  partial class ReferenceManualGenerator
+  partial class GenerateRefrenceManual
   {
     /// <summary>
     /// Print the mapping between color-names to the corresponding numbers.
